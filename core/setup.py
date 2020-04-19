@@ -33,7 +33,7 @@ def build_wdt(base_dir):
     os.system('cd ' + base_dir + '/build && git clone https://github.com/facebook/folly.git')
     # os.system('cd ' + base_dir + '/build/folly && git checkout v2019.09.02.00')
     os.system('cd ' + base_dir + '/build/folly && git checkout "$(git describe --abbrev=0 --always)"')
-    os.system('cd ' + base_dir + '/build && git clone https://github.com/facebook/wdt.git')
+    os.system('cd ' + base_dir + '/build && git clone https://github.com/length967/wdt.git')
     mkdir(base_dir + '/build/wdt/_build', sudo=False)
     os.system('cd ' + base_dir + '/build/wdt/_build && cmake -DCMAKE_INSTALL_PREFIX="/usr" -DCMAKE_BUILD_TYPE=Release ../ && make -j && sudo make install')
 
@@ -50,8 +50,8 @@ def setup_warp(base_dir):
     print('Warp-CLI is Now Setup and Registered in /usr/bin!')
     
     ### Start Automated Setup
-    build = yn_frame('Do You Want to Attempt an Automatic WDT Build and Install?')
-    if build == True:
+    #build = yn_frame('Do You Want to Attempt an Automatic WDT Build and Install?')
+    #if build == True:
         build_wdt(base_dir)
         os.system("echo '=============================' && warp --version && echo '============================='")
     if build == False:
