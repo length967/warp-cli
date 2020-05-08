@@ -52,8 +52,8 @@ def setup_warp(base_dir):
     ### Start Automated Setup
     #build = yn_frame('Do You Want to Attempt an Automatic WDT Build and Install?')
     #if build == True:
-        build_wdt(base_dir)
-        os.system("echo '=============================' && warp --version && echo '============================='")
+    build_wdt(base_dir)
+    os.system("echo '=============================' && warp --version && echo '============================='")
     #if build == False:
         #print('Refer to https://github.com/facebook/wdt/blob/master/build/BUILD.md for manual builds.')
 
